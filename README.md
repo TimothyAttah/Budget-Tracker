@@ -11,7 +11,7 @@ By Timothy Attah
 * [Getting Started](#get-started)
 * [Description](#description)
 * [Prerequisites](#prerequisites)
-* [To Do Lists](#todoLists)
+* [To Do Lists](#todo)
 
 ## [Description](description)
 
@@ -25,10 +25,10 @@ Before installing Budget Tracker, you need to install:
 * Node js
 * Git
 
-## [To Do Lists:](todoLists)
+## [To Do Lists:](todo)
 
 You can find the to do lists of Budget Tracker here:
 
-* [Click up](https://app.clickup.com/4666508/v/c/s/8748920)
-* [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2490650)
-* [Trello](https://trello.com/b/URBUwn6V/budget-tracker)
+1. [Click up](https://app.clickup.com/4666508/v/c/s/8748920)
+1. [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2490650)
+1. [Trello](https://trello.com/b/URBUwn6V/budget-tracker)
