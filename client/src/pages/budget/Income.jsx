@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {Icon} from 'semantic-ui-react'
 
 import {listBudget} from '../../redux/actions/incomeActions'
+import IncomeValue from './IncomeValue'
 
 const Income = () => {
   const incomes = useSelector(state => state.incomes.incomes )
@@ -10,10 +11,19 @@ const Income = () => {
   const dispatch = useDispatch()
   useEffect( () => {
     dispatch(listBudget())
-  },[dispatch])
+  }, [ dispatch ] )
+  
+  const calResult = () => {
+    let sum = 0
+    incomes.forEach( val => {
+      sum += val.value
+      return sum 
+    })
+  }
   return (
     <div>
-      <h1>Incomes</h1>
+      <div>
+        <h1>Incomes</h1>
       {incomes.length ? (
         incomes.map( income => {
           return (
@@ -25,6 +35,7 @@ const Income = () => {
       ): (
         <div><h2>You have no income </h2></div>
       )}
+      </div>
     </div>
   )
 }
