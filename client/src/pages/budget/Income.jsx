@@ -1,14 +1,11 @@
-import React, {useEffect, useContext} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {Icon} from 'semantic-ui-react'
-import { GlobalContext } from '../../context/BudgetContext'
+import React, { useEffect, useContext } from 'react';
 
+import { GlobalContext } from '../../context/BudgetContext';
+import IncomeTransactions from './IncomeTransactions';
 
 
 const Income = () => {
  const {incomes} = useContext(GlobalContext)
-  console.log( incomes )
-  
   useEffect( () => {
     
   },[incomes])
@@ -16,12 +13,12 @@ const Income = () => {
   return (
     <div>
       <div>
-        <h1>Income Transactions</h1>
+        <h3>Income Transactions</h3>
         { incomes.length ? (
           incomes.map( income => {
             return (
               <ul key={income.id}>
-                <li>{ income.content }<span>{ income.value }</span> <span><Icon name='trash' /></span></li>
+                <IncomeTransactions income={income} />
               </ul>
             )
           })
@@ -33,4 +30,4 @@ const Income = () => {
   )
 }
 
-export default Income
+export default Income;

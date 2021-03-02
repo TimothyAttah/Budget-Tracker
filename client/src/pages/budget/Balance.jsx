@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Balance = () => {
   return (
@@ -15,4 +15,4 @@ const Balance = () => {
   )
 }
 
-export default Balance
+export default Balance;

@@ -1,29 +1,24 @@
-import React, {useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {Icon} from 'semantic-ui-react'
+import React, { useContext } from 'react';
 
+import { GlobalContext } from '../../context/BudgetContext';
+import ExpenseTransaction from './ExpenseTransactions';
 
 const Expenses = () => {
-  // const expenses = useSelector(state => state.expenses.expenses )
-  // console.log(expenses)
-  // const dispatch = useDispatch()
-  // useEffect( () => {
-  //   dispatch(listBudget())
-  // },[dispatch])
+  const { expenses } = useContext( GlobalContext );
   return (
     <div>
-      <h1>Expenses Transaction</h1>
-      {/* {expenses.length ? (
+      <h3>Expense Transactions</h3>
+      {expenses.length ? (
         expenses.map( expense => {
           return (
             <ul key={expense.id}>
-              <li>{ expense.content }<span>{ expense.value }</span> <span><Icon name='trash' /></span></li>
+              <ExpenseTransaction expense={expense} />
             </ul>
           )
         })
       ): (
-        <div><h2>You have no expenses </h2></div>
-      )} */}
+        <div><h2>You have no expenses</h2></div>
+      )}
     </div>
   )
 }

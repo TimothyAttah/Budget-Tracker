@@ -1,6 +1,7 @@
-import React from 'react'
-import Expenses from './Expenses'
-import Income from './Income'
+import React from 'react';
+
+import Expenses from './Expenses';
+import Income from './Income';
 
 const BudgetList = () => {
   return (
