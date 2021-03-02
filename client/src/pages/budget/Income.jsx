@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import {Icon} from 'semantic-ui-react'
 
 import {listBudget} from '../../redux/actions/incomeActions'
-import IncomeValue from './IncomeValue'
 
 const Income = () => {
   const incomes = useSelector(state => state.incomes.incomes )
