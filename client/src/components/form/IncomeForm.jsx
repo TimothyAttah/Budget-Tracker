@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { Form, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import {v4} from 'uuid'
 import { GlobalContext } from '../../context/BudgetContext';
 
@@ -18,7 +18,7 @@ const IncomeForm = () => {
 
  const handleSubmit = ( e ) => {
    e.preventDefault()
-   if ( content != "" ) {
+   if ( content !== "" ) {
       const newIncome = {
      id: v4(),
      content,
