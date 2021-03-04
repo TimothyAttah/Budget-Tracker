@@ -18,7 +18,8 @@ const IncomeForm = () => {
 
  const handleSubmit = ( e ) => {
    e.preventDefault()
-   const newIncome = {
+   if ( content != "" ) {
+      const newIncome = {
      id: v4(),
      content,
      value: parseInt(value)
@@ -28,6 +29,8 @@ const IncomeForm = () => {
      content: '',
      value: ''
    })
+   }
+  
   }
 
   return (

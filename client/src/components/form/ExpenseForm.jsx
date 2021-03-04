@@ -19,7 +19,8 @@ const ExpenseForm = () => {
 
  const handleSubmit = ( e ) => {
    e.preventDefault()
-   const newExpenses = {
+   if ( content != "" ) {
+      const newExpenses = {
      id: v4(),
      content,
      value: parseInt(value)
@@ -30,6 +31,8 @@ const ExpenseForm = () => {
      content: '',
      value: ''
    })
+   }
+  
   }
 
   return (
