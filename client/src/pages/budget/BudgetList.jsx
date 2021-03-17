@@ -9,7 +9,7 @@ const BudgetList = () => {
       <Income />
       <Expenses />
     </div>
-  )
-}
+  );
+};
 
 export default BudgetList;

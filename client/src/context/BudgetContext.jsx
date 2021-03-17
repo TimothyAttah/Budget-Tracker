@@ -1,22 +1,27 @@
 import React, { createContext, useReducer, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import BudgetReducer from './BudgetReducer';
 
 const initialState = {
-  incomes: JSON.parse(localStorage.getItem('incomeTransaction')) || [],
-  expenses: JSON.parse(localStorage.getItem('expenseTransaction')) || []
-}
+  incomes: JSON.parse( localStorage.getItem( 'incomeTransaction' ) ) || [],
+  expenses: JSON.parse( localStorage.getItem( 'expenseTransaction' ) ) || []
+};
 
-export const GlobalContext = createContext( initialState )
+export const GlobalContext = createContext( initialState );
 
-export const GlobalContextProvider = ({children}) => {
-  const [ state, dispatch ] = useReducer( BudgetReducer, initialState )
+export const GlobalContextProvider = ( { children } ) => {
+  GlobalContextProvider.propTypes = {
+    children: PropTypes.func.isRequired
+  };
+  const [ state, dispatch ] = useReducer( BudgetReducer, initialState );
 
   useEffect( () => {
     localStorage.setItem(
-      "incomeTransaction", JSON.stringify( state.incomes )
+      'incomeTransaction', JSON.stringify( state.incomes )
     );
     localStorage.setItem(
-      "expenseTransaction", JSON.stringify( state.expenses )
+      'expenseTransaction', JSON.stringify( state.expenses )
     );
   } );
 
@@ -24,21 +29,21 @@ export const GlobalContextProvider = ({children}) => {
     dispatch( {
       type: 'ADD_INCOME',
       payload: income
-    })
-  }
+    } );
+  };
   const addExpenses = ( expense ) => {
     dispatch( {
       type: 'ADD_EXPENSES',
       payload: expense
-    })
-  }
+    } );
+  };
 
   const deleteTransaction = ( id ) => {
     dispatch( {
       type: 'DELETE_TRANSACTION',
       payload: id
-    })
-  }
+    } );
+  };
 
   return (
     <GlobalContext.Provider value={ {
@@ -46,9 +51,10 @@ export const GlobalContextProvider = ({children}) => {
       expenses: state.expenses,
       addIncome,
       addExpenses,
-    deleteTransaction
-    }}>
-      {children}
+      deleteTransaction
+    } }
+    >
+      {children }
     </GlobalContext.Provider>
-  )
-}
+  );
+};
